@@ -1,0 +1,9 @@
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core\bin\Debug\netcoreapp2.0\POS.Core.deps.json
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core\bin\Debug\netcoreapp2.0\POS.Core.dll
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core\bin\Debug\netcoreapp2.0\POS.Core.pdb
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core\obj\Debug\netcoreapp2.0\POS.Core.csproj.CoreCompileInputs.cache
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core\obj\Debug\netcoreapp2.0\POS.Core.AssemblyInfoInputs.cache
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core\obj\Debug\netcoreapp2.0\POS.Core.AssemblyInfo.cs
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core\obj\Debug\netcoreapp2.0\POS.Core.dll
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core\obj\Debug\netcoreapp2.0\POS.Core.pdb
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core\obj\Debug\netcoreapp2.0\POS.Core.csprojResolveAssemblyReference.cache

@@ -1,0 +1,17 @@
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core.Tests\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core.Tests\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core.Tests\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core.Tests\bin\Debug\netcoreapp2.0\POS.Core.Tests.deps.json
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core.Tests\bin\Debug\netcoreapp2.0\POS.Core.Tests.runtimeconfig.json
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core.Tests\bin\Debug\netcoreapp2.0\POS.Core.Tests.runtimeconfig.dev.json
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core.Tests\bin\Debug\netcoreapp2.0\POS.Core.Tests.dll
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core.Tests\bin\Debug\netcoreapp2.0\POS.Core.dll
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core.Tests\bin\Debug\netcoreapp2.0\POS.Core.pdb
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core.Tests\obj\Debug\netcoreapp2.0\POS.Core.Tests.csprojResolveAssemblyReference.cache
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core.Tests\obj\Debug\netcoreapp2.0\POS.Core.Tests.csproj.CoreCompileInputs.cache
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core.Tests\obj\Debug\netcoreapp2.0\POS.Core.Tests.AssemblyInfoInputs.cache
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core.Tests\obj\Debug\netcoreapp2.0\POS.Core.Tests.AssemblyInfo.cs
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core.Tests\obj\Debug\netcoreapp2.0\POS.Core.Tests.csproj.CopyComplete
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core.Tests\bin\Debug\netcoreapp2.0\POS.Core.Tests.pdb
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core.Tests\obj\Debug\netcoreapp2.0\POS.Core.Tests.dll
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core.Tests\obj\Debug\netcoreapp2.0\POS.Core.Tests.pdb

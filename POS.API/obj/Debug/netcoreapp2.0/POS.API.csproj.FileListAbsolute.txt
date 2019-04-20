@@ -1,0 +1,16 @@
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\bin\Debug\netcoreapp2.0\POS.API.deps.json
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\bin\Debug\netcoreapp2.0\POS.API.runtimeconfig.json
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\bin\Debug\netcoreapp2.0\POS.API.runtimeconfig.dev.json
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\bin\Debug\netcoreapp2.0\POS.API.dll
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\bin\Debug\netcoreapp2.0\POS.API.pdb
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\bin\Debug\netcoreapp2.0\POS.Core.dll
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\bin\Debug\netcoreapp2.0\POS.Core.pdb
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\obj\Debug\netcoreapp2.0\POS.API.csprojResolveAssemblyReference.cache
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\obj\Debug\netcoreapp2.0\POS.API.csproj.CoreCompileInputs.cache
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\obj\Debug\netcoreapp2.0\POS.API.AssemblyInfoInputs.cache
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\obj\Debug\netcoreapp2.0\POS.API.AssemblyInfo.cs
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\obj\Debug\netcoreapp2.0\POS.API.csproj.CopyComplete
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\obj\Debug\netcoreapp2.0\POS.API.dll
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\obj\Debug\netcoreapp2.0\POS.API.pdb
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\bin\Debug\netcoreapp2.0\POS.Storage.SqlServer.dll
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\bin\Debug\netcoreapp2.0\POS.Storage.SqlServer.pdb
