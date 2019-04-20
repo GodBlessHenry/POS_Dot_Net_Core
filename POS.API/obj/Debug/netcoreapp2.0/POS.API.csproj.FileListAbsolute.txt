@@ -12,5 +12,3 @@ D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\obj\Debug\netcoreapp2.0\POS.API.Ass
 D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\obj\Debug\netcoreapp2.0\POS.API.csproj.CopyComplete
 D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\obj\Debug\netcoreapp2.0\POS.API.dll
 D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\obj\Debug\netcoreapp2.0\POS.API.pdb
-D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\bin\Debug\netcoreapp2.0\POS.Storage.SqlServer.dll
-D:\Projects\Sandbox\POS_Dot_Net_Core\POS.API\bin\Debug\netcoreapp2.0\POS.Storage.SqlServer.pdb

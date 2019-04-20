@@ -1,11 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using POS.Core.Services;
-using POS.Storage.SqlServer;
-using POS.Storage.SqlServer.Repository;
 
 namespace POS.API
 {
@@ -25,11 +21,8 @@ namespace POS.API
         */
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-
-            services.AddScoped<IDiscount, Discount>();
-            services.AddScoped<ICalculateTotal, CalculateTotal>();
+            //services.AddScoped<IDiscount, Discount>();
+            //services.AddScoped<ICalculateTotal, CalculateTotal>();
             services.AddMvc();
         }
 

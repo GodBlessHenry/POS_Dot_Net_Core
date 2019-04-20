@@ -12,3 +12,5 @@ D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Storage.SqlServer\bin\Debug\netcoreapp2
 D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Storage.SqlServer\bin\Debug\netcoreapp2.0\POS.Storage.SqlServer.pdb
 D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Storage.SqlServer\obj\Debug\netcoreapp2.0\POS.Storage.SqlServer.dll
 D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Storage.SqlServer\obj\Debug\netcoreapp2.0\POS.Storage.SqlServer.pdb
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Storage.SqlServer\bin\Debug\netcoreapp2.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Storage.SqlServer\bin\Debug\netcoreapp2.0\Microsoft.EntityFrameworkCore.SqlServer.xml

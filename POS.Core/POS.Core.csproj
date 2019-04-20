@@ -4,4 +4,16 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Apple.cs" />
+    <Compile Remove="Cheerio.cs" />
+    <Compile Remove="Discount\CalculateOrder_BulkAndCoupon.cs" />
+    <Compile Remove="Discount\CalculateTotal.cs" />
+    <Compile Remove="Discount\Discount.cs" />
+    <Compile Remove="Discount\ICalculateTotal.cs" />
+    <Compile Remove="Discount\ICanDiscountForBulk.cs" />
+    <Compile Remove="Discount\ICanDiscountForCoupon.cs" />
+    <Compile Remove="Discount\IDiscount.cs" />
+  </ItemGroup>
+
 </Project>

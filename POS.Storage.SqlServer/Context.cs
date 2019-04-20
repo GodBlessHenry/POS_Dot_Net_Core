@@ -11,7 +11,7 @@ namespace POS.Storage.SqlServer
         }
 
         public DbSet<Order> Orders { get; set; }
-        public DbSet<Discount> Discounts { get; set; }
+        //public DbSet<Discount> Discounts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {  // If we do not put the following code, the table names will be in plural, e.g. Products.

@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\POS.Core\POS.Core.csproj" />
-    <ProjectReference Include="..\POS.Storage.SqlServer\POS.Storage.SqlServer.csproj" />
   </ItemGroup>
 
 </Project>
