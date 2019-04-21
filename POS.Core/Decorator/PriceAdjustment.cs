@@ -2,8 +2,8 @@
 {
     public abstract class PriceAdjustment : IFinalPrice
     {
-        protected IFinalPrice AdjustedCart;
-        private double Adjustment { get; set; }
+        public IFinalPrice AdjustedCart;
+        public double Adjustment { get; protected set; }
         public Order Order { get; set; }
 
         protected PriceAdjustment(IFinalPrice adjustedCart)

@@ -2,6 +2,6 @@
 {
     public interface IOrderRepository
     {
-        Order GetById();
+        Order GetById(int id);
     }
 }

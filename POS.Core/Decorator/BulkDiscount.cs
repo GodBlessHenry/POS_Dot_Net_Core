@@ -1,7 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using POS.Core.Service;
-
-namespace POS.Core.Decorator
+﻿namespace POS.Core.Decorator
 {
     public class BulkDiscount : PriceAdjustment
     {
@@ -11,14 +8,13 @@ namespace POS.Core.Decorator
 
         public BulkDiscount(IFinalPrice adjustedCart) : base(adjustedCart)
         {
-            Order = adjustedCart.Order;
         }
 
         public void AdjustPriceByBulkDiscount()
         {
             var adjustment = 0d;
 
-            foreach (var item in Order.OrderItems)
+            foreach (var item in AdjustedCart.Order.OrderItems)
             {
                 adjustment += CalculateOrderItemPrice(item);
             }

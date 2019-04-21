@@ -17,5 +17,10 @@
             Creation.CanUseBulkDiscount = canUseBulkDiscount;
             return this;
         }
+        public ProductBuilder WithPrice(double price)
+        {
+            Creation.Price = price;
+            return this;
+        }
     }
 }

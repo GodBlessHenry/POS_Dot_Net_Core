@@ -20,10 +20,10 @@ namespace POS.API.Controllers
 
         // GET api/OrderTotals/FinalPrice
         [HttpGet]
-        [Route("FinalPrice")]
-        public IActionResult GetFinalPrice()
+        [Route("{orderId:int}/FinalPrice")]
+        public IActionResult GetFinalPrice(int orderId)
         {
-            var message = new CalculateOrderTotal(_discountVariables, _orderRepository).CalculateFinalPrice();
+            var message = new CalculateOrderTotal(_discountVariables, _orderRepository, orderId).CalculateFinalPrice();
 
             if (string.IsNullOrEmpty(message))
             {
@@ -33,68 +33,68 @@ namespace POS.API.Controllers
             return Ok(message);
         }
 
-        // GET api/OrderTotals/BulkAndCouponDiscount
-        [HttpGet]
-        [Route("BulkAndCouponDiscount")]
-        public IActionResult GetTotalWithBulkAndCouponDiscount()
-        {
-            var total = new CalculateOrderTotal(_discountVariables, _orderRepository).CalculateWithBulkAndCouponDiscount();
+        //// GET api/OrderTotals/BulkAndCouponDiscount
+        //[HttpGet]
+        //[Route("BulkAndCouponDiscount")]
+        //public IActionResult GetTotalWithBulkAndCouponDiscount()
+        //{
+        //    var total = new CalculateOrderTotal(_discountVariables, _orderRepository).CalculateWithBulkAndCouponDiscount();
 
-            if (total <= 0)
-            {
-                return NotFound();
-            }
+        //    if (total <= 0)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return Ok(total);
-        }
+        //    return Ok(total);
+        //}
 
-        // GET api/OrderTotals/CouponDiscount
-        [HttpGet]
-        [Route("CouponDiscount")]
-        public IActionResult GetTotalWithCouponeDiscount()
-        {
-            var total = new CalculateOrderTotal(_discountVariables, _orderRepository).CalculateWithCouponDiscount();
+        //// GET api/OrderTotals/CouponDiscount
+        //[HttpGet]
+        //[Route("CouponDiscount")]
+        //public IActionResult GetTotalWithCouponeDiscount()
+        //{
+        //    var total = new CalculateOrderTotal(_discountVariables, _orderRepository).CalculateWithCouponDiscount();
 
-            if (total <= 0)
-            {
-                return NotFound();
-            }
+        //    if (total <= 0)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return Ok(total);
-        }
+        //    return Ok(total);
+        //}
 
-        // GET api/OrderTotals/BulkDiscount
-        [HttpGet]
-        [Route("BulkDiscount")]
-        public IActionResult GetTotalWithBulkDiscount()
-        {
-            var total = new CalculateOrderTotal(_discountVariables, _orderRepository).CalculateWithBulkDiscount();
+        //// GET api/OrderTotals/BulkDiscount
+        //[HttpGet]
+        //[Route("BulkDiscount")]
+        //public IActionResult GetTotalWithBulkDiscount()
+        //{
+        //    var total = new CalculateOrderTotal(_discountVariables, _orderRepository).CalculateWithBulkDiscount();
 
-            if (total <= 0)
-            {
-                return NotFound();
-            }
+        //    if (total <= 0)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return Ok(total);
-        }
+        //    return Ok(total);
+        //}
 
-        // GET api/OrderTotals/NoDiscount
-        [HttpGet]
-        [Route("NoDiscount")]
-        public IActionResult GetTotalWithNoDiscount()
-        {
-            //var total = new CalculateOrderTotal(_discountVariables, _orderRepository).CalculateWithNoDiscount();
-            var bulk = new CalculateOrder_NoDiscount(_orderRepository);
+        //// GET api/OrderTotals/NoDiscount
+        //[HttpGet]
+        //[Route("NoDiscount")]
+        //public IActionResult GetTotalWithNoDiscount()
+        //{
+        //    //var total = new CalculateOrderTotal(_discountVariables, _orderRepository).CalculateWithNoDiscount();
+        //    var bulk = new CalculateOrder_NoDiscount(_orderRepository);
 
-            var total = bulk.CalculateDiscountPrice();
+        //    var total = bulk.CalculateDiscountPrice();
 
-            if (total <= 0)
-            {
-                return NotFound();
-            }
+        //    if (total <= 0)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return Ok(total);
-        }
+        //    return Ok(total);
+        //}
 
     }
 }

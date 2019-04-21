@@ -4,13 +4,12 @@ namespace POS.Core.Decorator
 {
     public class ShoppingCart : IFinalPrice
     {
-        private double Adjustment { get; set; }
-        private double FinalPrice { get; set; }
+        public double Adjustment { get; protected set; }
+        public double FinalPrice { get; protected set; }
         public Order Order { get; set; }
 
-        public ShoppingCart(IOrderRepository orderRepository)
+        public ShoppingCart()
         {
-            Order = orderRepository.GetById();
         }
 
         public void AdjustPrice(double adjustment)

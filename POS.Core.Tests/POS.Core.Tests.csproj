@@ -9,6 +9,9 @@
   <ItemGroup>
     <Compile Remove="Builders\CalculateOrder_BulkBuilder.cs" />
     <Compile Remove="CalculateTotalSpecs.cs" />
+    <Compile Remove="UnitTests\CalculateOrder_BulkSpecs.cs" />
+    <Compile Remove="UnitTests\CalculateOrder_CouponSpecs.cs" />
+    <Compile Remove="UnitTests\CalculateOrder_NoDiscountSpecs.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +24,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\POS.Core\POS.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UnitTests\" />
   </ItemGroup>
 
 </Project>

@@ -4,7 +4,6 @@
     {
         public NoDiscount(IFinalPrice adjustedCart) : base(adjustedCart)
         {
-            Order = adjustedCart.Order;
         }
 
         public void CalculatePriceWithoutDiscount()

@@ -8,14 +8,12 @@
 
         public CouponDiscount(IFinalPrice adjustedCart) : base(adjustedCart)
         {
-            Order = adjustedCart.Order;
         }
 
         public void AdjustPriceByCouponDiscount()
         {
             var total = AdjustedCart.GetFinalPrice();
-            var adjustment = (Order.WithCoupon && total >= EligibleAmt) ? OffAmt : NoCouponAmt;
-            //return (Order.WithCoupon && total >= EligibleAmt) ? (total - OffAmt) : total;
+            var adjustment = (AdjustedCart.Order.WithCoupon && total >= EligibleAmt) ? OffAmt : NoCouponAmt;
             
             this.AdjustedCart.AdjustPrice(adjustment);
         }

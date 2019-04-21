@@ -23,5 +23,11 @@
             Creation.Unit = unit;
             return this;
         }
+
+        public OrderItemBuilder WithProduct(Product product)
+        {
+            Creation.Product = product;
+            return this;
+        }
     }
 }

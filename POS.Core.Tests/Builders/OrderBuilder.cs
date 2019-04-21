@@ -22,16 +22,22 @@ namespace POS.Core.Tests.Builders
             return this;
         }
 
-        public OrderBuilder WithQuantity(int quantity)
+        public OrderBuilder WithOrderItem(List<OrderItem> orderItems)
         {
-            Creation.OrderItems[0].Quantity = quantity;
+            Creation.OrderItems = orderItems;
             return this;
         }
 
-        public OrderBuilder WithCanUseBulkDiscount(bool canUseBulkDiscount)
-        {
-            Creation.OrderItems[0].Product.CanUseBulkDiscount = canUseBulkDiscount;
-            return this;
-        }
+        //public OrderBuilder WithCanUseBulkDiscount(bool canUseBulkDiscount)
+        //{
+        //    Creation.OrderItems[0].Product.CanUseBulkDiscount = canUseBulkDiscount;
+        //    return this;
+        //}
+
+        //public OrderBuilder WithPrice(double price)
+        //{
+        //    Creation.OrderItems[0].Product.Price = price;
+        //    return this;
+        //}
     }
 }
