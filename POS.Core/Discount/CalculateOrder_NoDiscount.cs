@@ -12,7 +12,7 @@ namespace POS.Core.Services
             _orderRepository = orderRepository;
         }
 
-        public override decimal CalculateDiscountPrice()
+        public override double CalculateDiscountPrice()
         {
             var order = _orderRepository.GetById();
             return order.OrderItems.Sum(x => x.Product.Price * x.Quantity);

@@ -16,8 +16,8 @@ namespace POS.Core.Tests
         public class WhenCalculatingTotal : SpecsBase<CalculateOrder_NoDiscount>
         {
             private Order _order;
-            private decimal _expectedResult;
-            private decimal _actionResult;
+            private double _expectedResult;
+            private double _actionResult;
 
             protected override void Given()
             {

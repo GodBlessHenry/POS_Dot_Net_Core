@@ -13,13 +13,13 @@ namespace POS.Core.Service
                 {
                     new OrderItem
                     {
-                        Product = new Product { Name = "Cheerio", Price = 6.99m, CanUseBulkDiscount = true },
+                        Product = new Product { Name = "Cheerio", Price = 6.99d, CanUseBulkDiscount = true },
                         Unit = ProductUnit.Box,
                         Quantity = 40,
                     },
                     new OrderItem
                     {
-                        Product = new Product{ Name = "Apple", Price = 2.49m, CanUseBulkDiscount = true },
+                        Product = new Product{ Name = "Apple", Price = 2.49d, CanUseBulkDiscount = true },
                         Unit = ProductUnit.Pound,
                         Quantity = 10
                     }

@@ -16,6 +16,23 @@ namespace POS.API.Controllers
             _discountVariables = discountVariables;
         }
 
+
+
+        // GET api/OrderTotals/FinalPrice
+        [HttpGet]
+        [Route("FinalPrice")]
+        public IActionResult GetFinalPrice()
+        {
+            var message = new CalculateOrderTotal(_discountVariables, _orderRepository).CalculateFinalPrice();
+
+            if (string.IsNullOrEmpty(message))
+            {
+                return NotFound();
+            }
+
+            return Ok(message);
+        }
+
         // GET api/OrderTotals/BulkAndCouponDiscount
         [HttpGet]
         [Route("BulkAndCouponDiscount")]
@@ -67,7 +84,7 @@ namespace POS.API.Controllers
         public IActionResult GetTotalWithNoDiscount()
         {
             //var total = new CalculateOrderTotal(_discountVariables, _orderRepository).CalculateWithNoDiscount();
-             var bulk = new CalculateOrder_NoDiscount(_orderRepository);
+            var bulk = new CalculateOrder_NoDiscount(_orderRepository);
 
             var total = bulk.CalculateDiscountPrice();
 

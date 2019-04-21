@@ -4,8 +4,8 @@
     {
         public int BulkQty { get; set; }
         public int FreeQty { get; set; }
-        public decimal EligibleAmt { get; set; }
-        public decimal OffAmt { get; set; }
+        public double EligibleAmt { get; set; }
+        public double OffAmt { get; set; }
 
         public DiscountVariables()
         {

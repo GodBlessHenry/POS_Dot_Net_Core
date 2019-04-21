@@ -9,9 +9,9 @@
             BaseDiscountCalculator = calculateDiscount;
         }
 
-        public virtual decimal CalculateDiscountPrice()
+        public virtual double CalculateDiscountPrice()
         {
-            return BaseDiscountCalculator?.CalculateDiscountPrice() ?? 0m;
+            return BaseDiscountCalculator?.CalculateDiscountPrice() ?? 0d;
         }
     }
 }

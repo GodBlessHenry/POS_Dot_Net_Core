@@ -16,9 +16,9 @@ namespace POS.Core.Services
             _orderRepository = orderRepository;
         }
 
-        public override decimal CalculateDiscountPrice()
+        public override double CalculateDiscountPrice()
         {
-            var total = 0m;
+            var total = 0d;
             var order = _orderRepository.GetById();
 
             foreach (var item in order.OrderItems)
@@ -29,7 +29,7 @@ namespace POS.Core.Services
             return total;
         }
 
-        private decimal CalculateOrderItemPrice(OrderItem item)
+        private double CalculateOrderItemPrice(OrderItem item)
         {
             if (item.Quantity < BulkAndFree || !item.Product.CanUseBulkDiscount)
                 return item.Quantity * item.Product.Price;

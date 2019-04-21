@@ -6,8 +6,8 @@ namespace POS.Core.Services
     {
         private readonly IOrderRepository _orderRepository;
         private readonly IDiscountVariables _discountVariables;
-        private decimal EligibleAmt => _discountVariables.EligibleAmt;
-        private decimal OffAmt => _discountVariables.OffAmt;
+        private double EligibleAmt => _discountVariables.EligibleAmt;
+        private double OffAmt => _discountVariables.OffAmt;
 
         public CalculateOrder_Coupon(IDiscountVariables discountVariables, IOrderRepository orderRepository)
         {
@@ -15,7 +15,7 @@ namespace POS.Core.Services
             _orderRepository = orderRepository;
         }
 
-        public override decimal CalculateDiscountPrice()
+        public override double CalculateDiscountPrice()
         {
             var order = _orderRepository.GetById();
             var total = BaseDiscountCalculator.CalculateDiscountPrice();

@@ -10,7 +10,7 @@ namespace POS.Core.Tests.Builders
 
         public static string RandomString() => Guid.NewGuid().ToString();
 
-        public static decimal RandomDecimal() => (decimal)Rand.NextDouble();
+        public static double Randomdouble() => (double)Rand.NextDouble();
 
         public static OrderBuilder Order()
         {

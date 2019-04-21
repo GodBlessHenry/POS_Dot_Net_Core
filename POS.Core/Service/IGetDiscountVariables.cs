@@ -4,7 +4,7 @@
     {
         int BulkQty { get; set; }
         int FreeQty { get; set; }
-        decimal EligibleAmt { get; set; }
-        decimal OffAmt { get; set; }
+        double EligibleAmt { get; set; }
+        double OffAmt { get; set; }
     }
 }

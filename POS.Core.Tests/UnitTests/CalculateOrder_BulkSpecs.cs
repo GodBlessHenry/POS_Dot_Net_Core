@@ -15,12 +15,12 @@ namespace POS.Core.Tests
         public class WhenQuantityQualifyBulkDiscount : SpecsBase<CalculateOrder_Bulk>
         {
             private Order _order;
-            private decimal _expectedResult;
-            private decimal _actualResult;
+            private double _expectedResult;
+            private double _actualResult;
             private const int BulkQty = 2;
             private const int FreeQty = 1;
-            private const decimal EligibleAmt = 100m;
-            private const decimal OffAmt = 5m;
+            private const double EligibleAmt = 100d;
+            private const double OffAmt = 5d;
             private const int Quantity = 10;
             private const int BulkAndFree = BulkQty + FreeQty;
 
@@ -60,12 +60,12 @@ namespace POS.Core.Tests
         public class WhenQuantityQualifyBulkDiscountButSaleIsNotOn : SpecsBase<CalculateOrder_Bulk>
         {
             private Order _order;
-            private decimal _expectedResult;
-            private decimal _actualResult;
+            private double _expectedResult;
+            private double _actualResult;
             private const int BulkQty = 2;
             private const int FreeQty = 1;
-            private const decimal EligibleAmt = 100m;
-            private const decimal OffAmt = 5m;
+            private const double EligibleAmt = 100d;
+            private const double OffAmt = 5d;
             private const int Quantity = 10;
 
             protected override void Given()
@@ -103,12 +103,12 @@ namespace POS.Core.Tests
         public class WhenQuantityNotQualifyBulkDiscount : SpecsBase<CalculateOrder_Bulk>
         {
             private Order _order;
-            private decimal _expectedResult;
-            private decimal _actualResult;
+            private double _expectedResult;
+            private double _actualResult;
             private const int BulkQty = 2;
             private const int FreeQty = 1;
-            private const decimal EligibleAmt = 100m;
-            private const decimal OffAmt = 5m;
+            private const double EligibleAmt = 100d;
+            private const double OffAmt = 5d;
             private const int Quantity = 2;
 
             protected override void Given()
