@@ -1,50 +1,44 @@
-﻿namespace POS.Core.Services
+﻿using POS.Core.Service;
+
+namespace POS.Core.Services
 {
     public class CalculateOrderTotal
     {
-        private readonly Order _order;
-        private const int BulkQty = 2;
-        private const int FreeQty = 1;
-        private const decimal EligibleAmt = 100m;
-        private const decimal OffAmt = 5m;
+        private readonly IOrderRepository _orderRepository;
+        private readonly IDiscountVariables _discountVariables;
 
-        //private IDiscount _discount;
-
-        public CalculateOrderTotal(Order order) //, IDiscount discount)
+        public CalculateOrderTotal(IDiscountVariables discountVariables, IOrderRepository orderRepository)
         {
-            _order = order;
-            //_discount = discount;
+            _discountVariables = discountVariables;
+            _orderRepository = orderRepository;
         }
 
-        //public decimal Calculate()
-        //{
-        //    var total = 0m;
+        public decimal CalculateWithNoDiscount()
+        {
+            var bulk = new CalculateOrder_NoDiscount(_orderRepository);
 
-        //    total = new CalculateOrder_Bulk(_order, 2, 1).CalculateDiscountPrice();
-        //    total += new CalculateOrder_Coupon(total, 100, 5).CalculateDiscountPrice();
-
-        //    return total;
-        //}
+            return bulk.CalculateDiscountPrice();
+        }
 
         public decimal CalculateWithBulkDiscount()
         {
-            CalculateOrder_Bulk bulk = new CalculateOrder_Bulk(_order, BulkQty, FreeQty);
+            var bulk = new CalculateOrder_Bulk(_discountVariables, _orderRepository);
 
             return bulk.CalculateDiscountPrice();
         }
 
         public decimal CalculateWithBulkAndCouponDiscount()
         {
-            var coupon = new CalculateOrder_Coupon(_order, EligibleAmt, OffAmt);
-            coupon.SetDiscount(new CalculateOrder_Bulk(_order, BulkQty, FreeQty));
-            
+            var coupon = new CalculateOrder_Coupon(_discountVariables, _orderRepository);
+            coupon.SetBaseDiscount(new CalculateOrder_Bulk(_discountVariables, _orderRepository));
+
             return coupon.CalculateDiscountPrice();
         }
 
         public decimal CalculateWithCouponDiscount()
         {
-            var coupon = new CalculateOrder_Coupon(_order, EligibleAmt, OffAmt);
-            coupon.SetDiscount(new CalculateOrder_NoDiscount(_order));
+            var coupon = new CalculateOrder_Coupon(_discountVariables, _orderRepository);
+            coupon.SetBaseDiscount(new CalculateOrder_NoDiscount(_orderRepository));
 
             return coupon.CalculateDiscountPrice();
         }

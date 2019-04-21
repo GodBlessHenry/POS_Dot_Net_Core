@@ -2,6 +2,49 @@
 
 namespace POS.Core.Tests.Helpers
 {
+    //    [TestClass]
+    //    public abstract class SpecsBase
+    //    {
+    //        private readonly AutoMocker _autoMocker;
+
+    //        protected SpecsBase()
+    //        {
+    //            this._autoMocker = new AutoMocker();
+    //        }
+
+    //        [TestInitialize]
+    //        public void Setup()
+    //        {
+    //            this.Given();
+    //            this.When();
+    //        }
+
+    //        [TestCleanup]
+    //        public virtual void CleanupFixture()
+    //        {
+    //        }
+
+    //        protected abstract void Given();
+
+    //        protected abstract void When();
+
+    //        protected TSut CreateSut<TSut>() where TSut : class
+    //        {
+    //            return this._autoMocker.Create<TSut>();
+    //        }
+
+    //        protected TDependency Mock<TDependency>()
+    //        {
+    //            return this._autoMocker.Mock<TDependency>();
+    //        }
+
+    //        protected void RegisterDependency<T>(T dependency)
+    //        {
+    //            this._autoMocker.Register<T>(dependency);
+    //        }
+    //    }
+    //}
+
     [TestClass]
     public abstract class SpecsBase<TSut> where TSut : class
     {

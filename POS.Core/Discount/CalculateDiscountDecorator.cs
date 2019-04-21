@@ -1,18 +1,17 @@
 ﻿namespace POS.Core.Services
 {
-    public class CalculateDiscountDecorator : CalculateDiscountBase
+    public class CalculateDiscountDecorator : ICalculateDiscount 
     {
-        //protected decimal Total;
-        protected CalculateDiscountBase CalculateDiscount;
+        protected ICalculateDiscount BaseDiscountCalculator;
 
-        public void SetDiscount(CalculateDiscountBase calculateDiscount)
+        public void SetBaseDiscount(ICalculateDiscount calculateDiscount)
         {
-            CalculateDiscount = calculateDiscount;
+            BaseDiscountCalculator = calculateDiscount;
         }
 
-        public override decimal CalculateDiscountPrice()
+        public virtual decimal CalculateDiscountPrice()
         {
-            return CalculateDiscount?.CalculateDiscountPrice() ?? 0m;
+            return BaseDiscountCalculator?.CalculateDiscountPrice() ?? 0m;
         }
     }
 }

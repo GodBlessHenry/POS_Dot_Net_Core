@@ -8,6 +8,7 @@
     <Compile Remove="Apple.cs" />
     <Compile Remove="Cheerio.cs" />
     <Compile Remove="Discount\CalculateOrder_BulkAndCoupon.cs" />
+    <Compile Remove="Discount\CalculateSubOrder_Bulk.cs" />
     <Compile Remove="Discount\CalculateTotal.cs" />
     <Compile Remove="Discount\Discount.cs" />
     <Compile Remove="Discount\ICalculateTotal.cs" />

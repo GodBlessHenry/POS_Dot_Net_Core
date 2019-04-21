@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using POS.Core.Service;
 
 namespace POS.API
 {
@@ -21,8 +22,8 @@ namespace POS.API
         */
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddScoped<IDiscount, Discount>();
-            //services.AddScoped<ICalculateTotal, CalculateTotal>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IDiscountVariables, DiscountVariables>();
             services.AddMvc();
         }
 

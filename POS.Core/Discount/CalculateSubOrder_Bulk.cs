@@ -1,31 +1,33 @@
-﻿namespace POS.Core.Services
+﻿using POS.Core.Service;
+
+namespace POS.Core.Services
 {
-    public class CalculateSubOrder_Bulk
+    public class CalculateSubOrder_Bulk : ICalculateDiscount
     {
-        public OrderItem SubOrder;
+        private readonly IDiscountVariables _discountVariables;
+        private readonly IOrderRepository _orderRepository;
+        // if the discount is buy 2 get 1 free, then BulkQty = 2, FreeQty = 1, BulkAndFree = 3
         public int BulkQty { get; set; }
         public int FreeQty { get; set; }
         public int BulkAndFree => BulkQty + FreeQty;
+        
 
-        private CalculateSubOrder_Bulk()
+        public CalculateSubOrder_Bulk(IDiscountVariables discountVariables, IOrderRepository orderRepository, IDiscountVariables discountVariables1, IOrderRepository orderRepository1)
         {
-        }
-
-        public CalculateSubOrder_Bulk(OrderItem subOrder, int bulkQty, int freeQty)
-        {
-            BulkQty = bulkQty;
-            FreeQty = freeQty;
-            SubOrder = subOrder;
+            _discountVariables = discountVariables1;
+            _orderRepository = orderRepository1;
         }
 
         public decimal CalculateDiscountPrice()
         {
-            if (SubOrder.Quantity < BulkAndFree) return SubOrder.Quantity * SubOrder.Product.Price;
+
+            if (SubOrder.Quantity < BulkAndFree || !SubOrder.Product.CanUseBulkDiscount)
+                return SubOrder.Quantity * SubOrder.Product.Price;
 
             var remainder = SubOrder.Quantity % BulkAndFree;
-            var discountAmount = (SubOrder.Quantity - remainder) / BulkAndFree;
+            var freeCount = (SubOrder.Quantity - remainder) / BulkAndFree;
 
-            return (discountAmount * BulkQty + remainder) * SubOrder.Product.Price;
+            return (SubOrder.Quantity - freeCount) * SubOrder.Product.Price;
         }
     }
 }

@@ -1,23 +1,21 @@
 ﻿using System.Linq;
+using POS.Core.Service;
 
 namespace POS.Core.Services
 {
     public class CalculateOrder_NoDiscount : CalculateDiscountDecorator
     {
-        public Order Order { get; set; }
+        private readonly IOrderRepository _orderRepository;
 
-        private CalculateOrder_NoDiscount()
+        public CalculateOrder_NoDiscount(IOrderRepository orderRepository)
         {
-        }
-
-        public CalculateOrder_NoDiscount(Order order)
-        {
-            Order = order;
+            _orderRepository = orderRepository;
         }
 
         public override decimal CalculateDiscountPrice()
         {
-            return Order.OrderItems.Sum(x => x.Product.Price * x.Quantity);
+            var order = _orderRepository.GetById();
+            return order.OrderItems.Sum(x => x.Product.Price * x.Quantity);
         }
     }
 }

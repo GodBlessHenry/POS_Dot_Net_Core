@@ -1,32 +1,43 @@
-﻿namespace POS.Core.Services
+﻿using POS.Core.Service;
+
+namespace POS.Core.Services
 {
     public class CalculateOrder_Bulk : CalculateDiscountDecorator
     {
-        public Order Order { get; set; }
-        public int BulkQty { get; set; }
-        public int FreeQty { get; set; }
+        private readonly IDiscountVariables _discountVariables;
+        private readonly IOrderRepository _orderRepository;
+        private int BulkQty => _discountVariables.BulkQty;
+        private int FreeQty => _discountVariables.FreeQty;
+        public int BulkAndFree => BulkQty + FreeQty;
 
-        private CalculateOrder_Bulk()
+        public CalculateOrder_Bulk(IDiscountVariables discountVariables, IOrderRepository orderRepository)
         {
-        }
-
-        public CalculateOrder_Bulk(Order order, int bulkQty, int freeQty)
-        {
-            BulkQty = bulkQty;
-            FreeQty = freeQty;
-            Order = order;
+            _discountVariables = discountVariables;
+            _orderRepository = orderRepository;
         }
 
         public override decimal CalculateDiscountPrice()
         {
             var total = 0m;
+            var order = _orderRepository.GetById();
 
-            foreach (var item in Order.OrderItems)
+            foreach (var item in order.OrderItems)
             {
-                total += new CalculateSubOrder_Bulk(item, BulkQty, FreeQty).CalculateDiscountPrice();
+                total += CalculateOrderItemPrice(item);
             }
 
             return total;
+        }
+
+        private decimal CalculateOrderItemPrice(OrderItem item)
+        {
+            if (item.Quantity < BulkAndFree || !item.Product.CanUseBulkDiscount)
+                return item.Quantity * item.Product.Price;
+
+            var remainder = item.Quantity % BulkAndFree;
+            var freeCount = (item.Quantity - remainder) / BulkAndFree;
+
+            return (item.Quantity - freeCount) * item.Product.Price;
         }
     }
 }

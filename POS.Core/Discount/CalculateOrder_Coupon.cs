@@ -1,26 +1,25 @@
-﻿namespace POS.Core.Services
+﻿using POS.Core.Service;
+
+namespace POS.Core.Services
 {
     public class CalculateOrder_Coupon : CalculateDiscountDecorator
     {
-        public Order Order { get; set; }
-        public decimal EligibleAmt { get; set; }
-        public decimal OffAmt { get; set; }
+        private readonly IOrderRepository _orderRepository;
+        private readonly IDiscountVariables _discountVariables;
+        private decimal EligibleAmt => _discountVariables.EligibleAmt;
+        private decimal OffAmt => _discountVariables.OffAmt;
 
-        private CalculateOrder_Coupon()
+        public CalculateOrder_Coupon(IDiscountVariables discountVariables, IOrderRepository orderRepository)
         {
-        }
-
-        public CalculateOrder_Coupon(Order order, decimal eligibleAmt, decimal offAmt)
-        {
-            Order = order;
-            EligibleAmt = eligibleAmt;
-            OffAmt = offAmt;
+            _discountVariables = discountVariables;
+            _orderRepository = orderRepository;
         }
 
         public override decimal CalculateDiscountPrice()
         {
-            var total = CalculateDiscount.CalculateDiscountPrice();
-            return (Order.WithCoupon && total >= EligibleAmt) ? (total - OffAmt) : total;
+            var order = _orderRepository.GetById();
+            var total = BaseDiscountCalculator.CalculateDiscountPrice();
+            return (order.WithCoupon && total >= EligibleAmt) ? (total - OffAmt) : total;
         }
     }
 }
