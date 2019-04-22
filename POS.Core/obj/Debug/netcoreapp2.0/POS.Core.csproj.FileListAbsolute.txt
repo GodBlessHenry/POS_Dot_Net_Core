@@ -6,4 +6,3 @@ D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core\obj\Debug\netcoreapp2.0\POS.Core.A
 D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core\obj\Debug\netcoreapp2.0\POS.Core.AssemblyInfo.cs
 D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core\obj\Debug\netcoreapp2.0\POS.Core.dll
 D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core\obj\Debug\netcoreapp2.0\POS.Core.pdb
-D:\Projects\Sandbox\POS_Dot_Net_Core\POS.Core\obj\Debug\netcoreapp2.0\POS.Core.csprojResolveAssemblyReference.cache
