@@ -1,16 +1,22 @@
 ﻿using POS.Core.Discount;
 using POS.Core.Service;
 
-namespace POS.Core.Services
+namespace POS.Core
 {
-    public class ShoppingCartCalculator
+    // This class is for being called by the web API controller,
+    // Since the web api project is not required for the assignment,
+    // hence I didn't include the web api project, although I did use it for testing.
+    // And also I didn't do unit test for this class since it's just
+    // for showing how the calculation can be done and not include
+    // much of business logic. 
+    public class ShoppingCartCalculator : IShoppingCartCalculator
     {
         private readonly IOrderRepository _orderRepository;
-        private readonly IDiscountVariables _discountVariables;
+        private readonly IDiscountVariablesRepository _discountVariablesRepository;
 
-        public ShoppingCartCalculator(IDiscountVariables discountVariables, IOrderRepository orderRepository)
+        public ShoppingCartCalculator(IDiscountVariablesRepository discountVariablesRepository, IOrderRepository orderRepository)
         {
-            _discountVariables = discountVariables;
+            _discountVariablesRepository = discountVariablesRepository;
             _orderRepository = orderRepository;
         }
 
@@ -45,7 +51,7 @@ namespace POS.Core.Services
 
         private IFinalPrice UseBulkDiscount(IFinalPrice cart, ref string view)
         {
-            var bulkDiscount = new BulkDiscount(cart, _discountVariables);
+            var bulkDiscount = new BulkDiscount(cart, _discountVariablesRepository);
             bulkDiscount.AdjustPriceByBulkDiscount();
             view += "Bulk discount adjustment    : $" + cart.GetAdjustment() * -1 + " \n";
             view += "Price after bulk discount   : $" + cart.GetFinalPrice() + " \n";
@@ -55,7 +61,7 @@ namespace POS.Core.Services
 
         private IFinalPrice UseCouponDiscount(IFinalPrice cart, ref string view)
         {
-            var coupon = new CouponDiscount(cart, _discountVariables);
+            var coupon = new CouponDiscount(cart, _discountVariablesRepository);
             coupon.AdjustPriceByCouponDiscount();
             view += "Coupon discount adjustment  : $" + cart.GetAdjustment() * -1 + " \n";
             view += "Price after coupon discount : $" + cart.GetFinalPrice() + " \n";

@@ -5,7 +5,7 @@ using POS.Core.Discount;
 using POS.Core.Tests.Builders;
 using POS.Core.Tests.Helpers;
 
-namespace POS.Core.Tests.DecoratorTests
+namespace POS.Core.Tests.UnitTests
 {
     [TestClass]
     public class NoDiscountSpecs

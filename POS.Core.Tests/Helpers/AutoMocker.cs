@@ -15,9 +15,9 @@ namespace POS.Core.Tests.Helpers
             this._dependencies = (IDictionary<Type, object>)new Dictionary<Type, object>();
         }
 
-        // This function use reflection to get the constructor of the SUT,
+        // This function uses reflection to get the constructor of the SUT,
         // and also auto mock the constructor's parameters.
-        // so that even the signature of constructor changed,
+        // So that even the signature of the constructor changed over the time,
         // the test will still work properly
         public TSystemUnderTest Create<TSystemUnderTest>() where TSystemUnderTest : class
         {

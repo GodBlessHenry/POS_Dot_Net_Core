@@ -6,16 +6,16 @@ namespace POS.Core.Discount
     // This is the Decorator subclass
     public class BulkDiscount : PriceAdjustment
     {
-        // for example, if it's buy 2 get the 3rd one free,
+        // for example, if it's buy 2 and get the 3rd one free,
         // then BulkQty = 2, FreeQty = 1
-        private readonly IDiscountVariables _discountVariables;
-        private int BulkQty => _discountVariables.BulkQty;
-        private int FreeQty => _discountVariables.FreeQty;
+        private readonly IDiscountVariablesRepository _discountVariablesRepository;
+        private int BulkQty => _discountVariablesRepository.BulkQty;
+        private int FreeQty => _discountVariablesRepository.FreeQty;
         public int BulkAndFree => BulkQty + FreeQty;
 
-        public BulkDiscount(IFinalPrice adjustedCart, IDiscountVariables discountVariables) : base(adjustedCart)
+        public BulkDiscount(IFinalPrice adjustedCart, IDiscountVariablesRepository discountVariablesRepository) : base(adjustedCart)
         {
-            _discountVariables = discountVariables;
+            _discountVariablesRepository = discountVariablesRepository;
         }
 
         public void AdjustPriceByBulkDiscount()

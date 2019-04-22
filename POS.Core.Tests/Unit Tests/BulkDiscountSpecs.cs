@@ -6,7 +6,7 @@ using POS.Core.Service;
 using POS.Core.Tests.Builders;
 using POS.Core.Tests.Helpers;
 
-namespace POS.Core.Tests.DecoratorTests
+namespace POS.Core.Tests.UnitTests
 {
     [TestClass]
     public class BulkDiscountSpecs
@@ -35,8 +35,8 @@ namespace POS.Core.Tests.DecoratorTests
                 _expectedAdjustment = Price * FreeQty * (Quantity - Quantity % BulkAndFree) / BulkAndFree ;
 
                 Mock<IFinalPrice>().Order.Returns(_order);
-                Mock<IDiscountVariables>().FreeQty.Returns(FreeQty);
-                Mock<IDiscountVariables>().BulkQty.Returns(BulkQty);
+                Mock<IDiscountVariablesRepository>().FreeQty.Returns(FreeQty);
+                Mock<IDiscountVariablesRepository>().BulkQty.Returns(BulkQty);
             }
 
             protected override void When()
@@ -107,8 +107,8 @@ namespace POS.Core.Tests.DecoratorTests
                 _expectedAdjustment = NoDiscount;
 
                 Mock<IFinalPrice>().Order.Returns(_order);
-                Mock<IDiscountVariables>().FreeQty.Returns(FreeQty);
-                Mock<IDiscountVariables>().BulkQty.Returns(BulkQty);
+                Mock<IDiscountVariablesRepository>().FreeQty.Returns(FreeQty);
+                Mock<IDiscountVariablesRepository>().BulkQty.Returns(BulkQty);
             }
 
             protected override void When()

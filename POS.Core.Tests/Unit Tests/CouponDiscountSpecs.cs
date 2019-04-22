@@ -5,7 +5,7 @@ using POS.Core.Service;
 using POS.Core.Tests.Builders;
 using POS.Core.Tests.Helpers;
 
-namespace POS.Core.Tests.DecoratorTests
+namespace POS.Core.Tests.UnitTests
 {
     [TestClass]
     public class CouponDiscountSpecs
@@ -26,8 +26,8 @@ namespace POS.Core.Tests.DecoratorTests
                 _order = Build.Order().WithCoupon(WithCoupon); 
                 Mock<IFinalPrice>().Order.Returns(_order);
                 Mock<IFinalPrice>().GetFinalPrice().Returns(TotalPriceBeforeCoupon);
-                Mock<IDiscountVariables>().EligibleAmt.Returns(EligibleAmt);
-                Mock<IDiscountVariables>().OffAmt.Returns(OffAmt);
+                Mock<IDiscountVariablesRepository>().EligibleAmt.Returns(EligibleAmt);
+                Mock<IDiscountVariablesRepository>().OffAmt.Returns(OffAmt);
                 _expectedAdjustment = OffAmt;
             }
 

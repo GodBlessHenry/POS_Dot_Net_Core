@@ -2,7 +2,9 @@
 
 namespace POS.Core.Tests.Builders
 {
-    // This is for re-using the creation of the stubs.
+    // This is for re-using the creation of the stubs,
+    // so that I don't need to manually create stubs
+    // over and over again.
     public class Build
     {
         private static readonly Random Rand = new Random();

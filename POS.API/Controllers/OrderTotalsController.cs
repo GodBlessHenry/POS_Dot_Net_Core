@@ -1,19 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using POS.Core;
 using POS.Core.Service;
-using POS.Core.Services;
 
 namespace POS.API.Controllers
 {
     [Route("api/[controller]")]
     public class OrderTotalsController : Controller
     {
-        private readonly IOrderRepository _orderRepository;
-        private readonly IDiscountVariables _discountVariables;
+        private readonly IShoppingCartCalculator _shoppingCartCalculator;
+        
 
-        public OrderTotalsController(IOrderRepository orderRepository, IDiscountVariables discountVariables)
+        public OrderTotalsController(IShoppingCartCalculator shoppingCartCalculator)
         {
-            _orderRepository = orderRepository;
-            _discountVariables = discountVariables;
+            _shoppingCartCalculator = shoppingCartCalculator;
         }
 
         // GET api/OrderTotals/orderId/FinalPrice
@@ -21,8 +20,7 @@ namespace POS.API.Controllers
         [Route("{orderId:int}/FinalPrice")]
         public IActionResult GetFinalPrice(int orderId)
         {
-            var message = new ShoppingCartCalculator(_discountVariables, _orderRepository)
-                                .CalculateFinalPrice(orderId);
+            var message = _shoppingCartCalculator.CalculateFinalPrice(orderId);
 
             if (string.IsNullOrEmpty(message))
             {
