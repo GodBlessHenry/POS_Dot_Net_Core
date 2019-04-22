@@ -1,19 +1,18 @@
-﻿namespace POS.Core.Decorator
+﻿using System.Linq;
+
+namespace POS.Core.Discount
 {
+    // This is the Decorator subclass
     public class NoDiscount : PriceAdjustment
     {
         public NoDiscount(IFinalPrice adjustedCart) : base(adjustedCart)
         {
         }
 
+        // This function is to calculate regular total for the order
         public void CalculatePriceWithoutDiscount()
         {
-            var adjustment = 0d;
-
-            foreach (var item in AdjustedCart.Order.OrderItems)
-            {
-                adjustment += item.Quantity * item.Product.Price;
-            }
+            var adjustment = AdjustedCart.Order.OrderItems.Sum(item => item.Quantity * item.Product.Price);
 
             this.AdjustedCart.AdjustPrice(-1 * adjustment);
         }

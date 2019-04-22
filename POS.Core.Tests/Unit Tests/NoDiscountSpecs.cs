@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
-using POS.Core.Decorator;
+using POS.Core.Discount;
 using POS.Core.Tests.Builders;
 using POS.Core.Tests.Helpers;
 

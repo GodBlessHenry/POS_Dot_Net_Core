@@ -1,6 +1,6 @@
 ﻿using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using POS.Core.Decorator;
+using POS.Core.Discount;
 using POS.Core.Tests.Helpers;
 
 namespace POS.Core.Tests.DecoratorTests

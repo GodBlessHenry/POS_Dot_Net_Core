@@ -27,17 +27,5 @@ namespace POS.Core.Tests.Builders
             Creation.OrderItems = orderItems;
             return this;
         }
-
-        //public OrderBuilder WithCanUseBulkDiscount(bool canUseBulkDiscount)
-        //{
-        //    Creation.OrderItems[0].Product.CanUseBulkDiscount = canUseBulkDiscount;
-        //    return this;
-        //}
-
-        //public OrderBuilder WithPrice(double price)
-        //{
-        //    Creation.OrderItems[0].Product.Price = price;
-        //    return this;
-        //}
     }
 }

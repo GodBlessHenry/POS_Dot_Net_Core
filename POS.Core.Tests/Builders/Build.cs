@@ -2,6 +2,7 @@
 
 namespace POS.Core.Tests.Builders
 {
+    // This is for re-using the creation of the stubs.
     public class Build
     {
         private static readonly Random Rand = new Random();
@@ -10,7 +11,7 @@ namespace POS.Core.Tests.Builders
 
         public static string RandomString() => Guid.NewGuid().ToString();
 
-        public static double Randomdouble() => (double)Rand.NextDouble();
+        public static double RandomDouble() => (double)Rand.NextDouble();
 
         public static OrderBuilder Order()
         {

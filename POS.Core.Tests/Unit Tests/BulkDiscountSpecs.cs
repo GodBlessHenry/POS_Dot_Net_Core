@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
-using POS.Core.Decorator;
+using POS.Core.Discount;
+using POS.Core.Service;
 using POS.Core.Tests.Builders;
 using POS.Core.Tests.Helpers;
 
@@ -10,6 +11,9 @@ namespace POS.Core.Tests.DecoratorTests
     [TestClass]
     public class BulkDiscountSpecs
     {
+        private const int BulkQty = 2;
+        private const int FreeQty = 1;
+
         [TestClass]
         public class WhenQualifyBulkDiscount : SpecsBase<BulkDiscount>
         {
@@ -20,8 +24,6 @@ namespace POS.Core.Tests.DecoratorTests
             private const bool WithCoupon = true;
             private const int Quantity = 10;
             private const double Price = 4;
-            private const int BulkQty = 2;
-            private const int FreeQty = 1;
             public const int BulkAndFree = BulkQty + FreeQty;
             private double _expectedAdjustment;
 
@@ -30,9 +32,11 @@ namespace POS.Core.Tests.DecoratorTests
                 _product = Build.Product().WithCanUseBulkDiscount(CanUseBulkDiscount).WithPrice(Price);
                 _orderItem = Build.OrderItem().WithProduct(_product).WithQuantity(Quantity);
                 _order = Build.Order().WithCoupon(WithCoupon).WithOrderItem(new List<OrderItem> { _orderItem });
-                _expectedAdjustment = Price * (Quantity - Quantity % BulkAndFree) / BulkAndFree ;
+                _expectedAdjustment = Price * FreeQty * (Quantity - Quantity % BulkAndFree) / BulkAndFree ;
 
                 Mock<IFinalPrice>().Order.Returns(_order);
+                Mock<IDiscountVariables>().FreeQty.Returns(FreeQty);
+                Mock<IDiscountVariables>().BulkQty.Returns(BulkQty);
             }
 
             protected override void When()
@@ -103,6 +107,8 @@ namespace POS.Core.Tests.DecoratorTests
                 _expectedAdjustment = NoDiscount;
 
                 Mock<IFinalPrice>().Order.Returns(_order);
+                Mock<IDiscountVariables>().FreeQty.Returns(FreeQty);
+                Mock<IDiscountVariables>().BulkQty.Returns(BulkQty);
             }
 
             protected override void When()

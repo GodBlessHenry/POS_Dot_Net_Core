@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POS.API", "POS.API\POS.API.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POS.Core.Tests", "POS.Core.Tests\POS.Core.Tests.csproj", "{3AACD969-479D-47ED-AB7E-ACC724AD70CD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POS.API.Tests", "POS.API.Tests\POS.API.Tests.csproj", "{98018CBC-7051-44BB-AEEB-435FFD067844}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E5B574DA-A316-42A7-8B20-15CA40F76CA4}"
 EndProject
 Global
@@ -31,17 +29,12 @@ Global
 		{3AACD969-479D-47ED-AB7E-ACC724AD70CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AACD969-479D-47ED-AB7E-ACC724AD70CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AACD969-479D-47ED-AB7E-ACC724AD70CD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98018CBC-7051-44BB-AEEB-435FFD067844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98018CBC-7051-44BB-AEEB-435FFD067844}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98018CBC-7051-44BB-AEEB-435FFD067844}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98018CBC-7051-44BB-AEEB-435FFD067844}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3AACD969-479D-47ED-AB7E-ACC724AD70CD} = {E5B574DA-A316-42A7-8B20-15CA40F76CA4}
-		{98018CBC-7051-44BB-AEEB-435FFD067844} = {E5B574DA-A316-42A7-8B20-15CA40F76CA4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3561DF1D-0207-4BEB-A194-7288641B4B72}

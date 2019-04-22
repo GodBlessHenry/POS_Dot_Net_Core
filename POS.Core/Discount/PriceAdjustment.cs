@@ -1,5 +1,6 @@
-﻿namespace POS.Core.Decorator
+﻿namespace POS.Core.Discount
 {
+    // This is the decorator class
     public abstract class PriceAdjustment : IFinalPrice
     {
         public IFinalPrice AdjustedCart;

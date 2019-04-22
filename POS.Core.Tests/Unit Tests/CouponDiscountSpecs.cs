@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
-using POS.Core.Decorator;
+using POS.Core.Discount;
+using POS.Core.Service;
 using POS.Core.Tests.Builders;
 using POS.Core.Tests.Helpers;
 
@@ -10,13 +10,15 @@ namespace POS.Core.Tests.DecoratorTests
     [TestClass]
     public class CouponDiscountSpecs
     {
+        private const double OffAmt = 5d;
+        private const double EligibleAmt = 100d;
+
         [TestClass]
         public class WhenQualifyCouponDiscount : SpecsBase<CouponDiscount>
         {
             private Order _order;
             private const bool WithCoupon = true;
-            private const double TotalPriceBeforeCoupon = 100d;
-            private const double OffAmt = 5d;
+            private const double TotalPriceBeforeCoupon = 105d;
             private double _expectedAdjustment;
 
             protected override void Given()
@@ -24,7 +26,8 @@ namespace POS.Core.Tests.DecoratorTests
                 _order = Build.Order().WithCoupon(WithCoupon); 
                 Mock<IFinalPrice>().Order.Returns(_order);
                 Mock<IFinalPrice>().GetFinalPrice().Returns(TotalPriceBeforeCoupon);
-
+                Mock<IDiscountVariables>().EligibleAmt.Returns(EligibleAmt);
+                Mock<IDiscountVariables>().OffAmt.Returns(OffAmt);
                 _expectedAdjustment = OffAmt;
             }
 
@@ -75,7 +78,7 @@ namespace POS.Core.Tests.DecoratorTests
         {
             private Order _order;
             private const bool WithCoupon = false;
-            private const double TotalPriceBeforeCoupon = 100d;
+            private const double TotalPriceBeforeCoupon = 105d;
             private const double NoDiscount = 0d;
             private double _expectedAdjustment;
 

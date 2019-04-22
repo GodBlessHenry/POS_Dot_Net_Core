@@ -7,7 +7,7 @@
             Creation = new Product
             {
                 Name = Build.RandomString(),
-                Price = Build.Randomdouble(),
+                Price = Build.RandomDouble(),
                 CanUseBulkDiscount = true
             };
         }
