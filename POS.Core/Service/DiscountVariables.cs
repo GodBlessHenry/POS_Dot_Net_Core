@@ -11,8 +11,8 @@
         {
             // These values should be saved in database,
             // below just fake it like fetching them from the database 
-            BulkQty = 2;
-            FreeQty = 1;
+            BulkQty = 3;
+            FreeQty = 2;
             EligibleAmt = 100;
             OffAmt = 5;
         }
